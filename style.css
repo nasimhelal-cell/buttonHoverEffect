@@ -1,0 +1,91 @@
+*, *::after, *::before {
+    box-sizing: border-box;
+}
+
+.wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.btn{
+    display: block;
+    padding: 1rem 2rem;
+    background: rgb(51,56,55);
+    color: beige;
+    font-size: 2rem;
+    text-decoration: none;
+    transition: all .5s ease;
+    position: relative;
+}
+.btn:hover{
+    background: #fff;
+    color: rgb(51,56,55);
+}
+.btn:before{
+    position: absolute;
+    content: '';
+    left: 0;
+    top: 0;
+    background: red;
+    width: 100%;
+    height: 2px;
+    transform: scaleX(0);
+    transition: all .5s ease;
+    transform-origin: left;
+}
+.btn:hover::before{
+    transform: scaleX(1);
+}
+.btn:after{
+    position: absolute;
+    content: '';
+    right: 0;
+    bottom: 0;
+    background: red;
+    width: 100%;
+    height: 2px;
+    transform: scaleX(0);
+    transition: all .5s ease;
+    transform-origin: right;
+}.btn:hover::after{
+    transform: scaleX(1);
+}
+
+/* outer div css  */
+.btn2{
+    position: relative;
+    
+}
+.btn2:before{
+    position: absolute;
+    content: '';
+    height: 96%;
+    width: 2px;
+    background: blue;
+    bottom: 1px;
+    left: 0;
+    z-index: 1;
+    transform: scaleY(0);
+    transition: all .5s ease;
+    transform-origin: bottom;
+}
+.btn2:hover::before{
+    transform: scaleY(1);
+}
+.btn2:after{
+    position: absolute;
+    content: '';
+    height: 96%;
+    width: 2px;
+    background: blue;
+    top: 1px;
+    right: 0;
+    z-index: 1;
+    transform: scaleY(0);
+    transition: all .5s ease;
+    transform-origin: top;
+}
+.btn2:hover::after{
+    transform: scaleY(1);
+}
